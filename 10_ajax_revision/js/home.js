@@ -1,13 +1,5 @@
-import { UserCard } from "./components/user-card.js";
+import { UserCard } from "./components/users-card/user-card.js";
 import { UsersService } from "./services/users.service.js";
-
-// axios.get(BASE_URL).then(function (response) {
-//   const users = response.data;
-//   for (let user of users) {
-//     const card = UserCard(user);
-//     usersCards.appendChild(card);
-//   }
-// });
 
 class HomePage {
   constructor() {

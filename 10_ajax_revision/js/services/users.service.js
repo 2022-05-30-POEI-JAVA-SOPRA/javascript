@@ -1,4 +1,5 @@
 import { BASE_URL } from "../constants.js";
+import { Api } from "./api.config.js";
 
 export class UsersService {
   constructor() {
@@ -6,13 +7,13 @@ export class UsersService {
   }
 
   fetchUsers() {
-    return axios.get(BASE_URL + this.url).then(function (response) {
+    return Api.get(this.url).then(function (response) {
       return response.data;
     });
   }
 
   fetchUserById(id) {
-    return axios.get(BASE_URL + this.url + "/" + id).then(function (response) {
+    return Api.get(this.url + "/" + id).then(function (response) {
       return response.data;
     });
   }
