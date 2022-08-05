@@ -1,19 +1,17 @@
-import { UserCard } from "./components/users-card/user-card.js";
+import { UserCard } from "./components/users-list/user-card.js";
+import { UsersList } from "./components/users-list/users-list.js";
 import { UsersService } from "./services/users.service.js";
 
 class HomePage {
   constructor() {
-    this.$usersCards = document.querySelector("#users");
     this.usersService = new UsersService();
     this.users = [];
   }
 
   async main() {
     this.users = await this.usersService.fetchUsers();
-    for (let user of this.users) {
-      const card = UserCard(user);
-      this.$usersCards.appendChild(card);
-    }
+    const usersList = new UsersList(this.users);
+    usersList.render();
   }
 }
 

@@ -1,6 +1,6 @@
 import { CardButton } from "./card-button.js";
 import { CardDescription } from "./card-description.js";
-import { CardImage } from "./card-image.js";
+import { CardImageWrapper } from "./card-image.js";
 import { CardTitle } from "./card-title.js";
 
 export function UserCard(user) {
@@ -8,11 +8,7 @@ export function UserCard(user) {
   const card = document.createElement("div");
   card.classList.add("card");
 
-  const imageBox = document.createElement("div");
-  imageBox.classList.add("card__image-box");
-
-  const cardImage = CardImage(id, name);
-  imageBox.appendChild(cardImage);
+  const imageBox = CardImageWrapper(id, name);
 
   const cardTitle = CardTitle(name);
 
